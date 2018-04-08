@@ -36,6 +36,8 @@ dbg
 .DS_Store
 
 *.log
+*.yy
+
 
 
 
