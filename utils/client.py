@@ -1,3 +1,5 @@
+#! /usr/bin/python
+#! coding=UTF-8
 """
 添加用于接口测试的client，对于HTTP接口添加HTTPClient，发送http请求。
 还可以封装TCPClient，用来进行tcp链接，测试socket接口等等。

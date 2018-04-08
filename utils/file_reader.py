@@ -1,12 +1,20 @@
+#! /usr/bin/python
+#! coding=UTF-8
 """
 文件读取。YamlReader读取yaml文件，ExcelReader读取excel。
 """
 import yaml
 import os
+
+from ptyprocess.ptyprocess import FileNotFoundError
 from xlrd import open_workbook
 
 
 class YamlReader:
+    '''
+    入参是一个yml文件路径，返回该文件中的所有数据
+
+    '''
     def __init__(self, yamlf):
         if os.path.exists(yamlf):
             self.yamlf = yamlf
@@ -20,6 +28,7 @@ class YamlReader:
         if not self._data:
             with open(self.yamlf, 'rb') as f:
                 self._data = list(yaml.safe_load_all(f))  # load后是个generator，用list组织成列表
+                # self._data = list(yaml.load(f))  # load后是个generator，用list组织成列表
         return self._data
 
 
@@ -68,22 +77,27 @@ class ExcelReader:
                 s = workbook.sheet_by_name(self.sheet)
 
             if self.title_line:
-                title = s.row_values(0)  # 首行为title
+                title = s.row_values(0)  # 首行为title,每行读的内容是list
+                print 'titleaaa：',title,type(title)
                 for col in range(1, s.nrows):
                     # 依次遍历其余行，与首行组成dict，拼到self._data中
                     self._data.append(dict(zip(title, s.row_values(col))))
+                    print 'shuchu_data:',self._data,type(self._data)
             else:
                 for col in range(0, s.nrows):
                     # 遍历所有行，拼到self._data中
                     self._data.append(s.row_values(col))
+                    print 'meiyoutitle:',self._data
         return self._data
 
 
 if __name__ == '__main__':
-    y = 'E:\Test_framework\config\config.yml'
-    reader = YamlReader(y)
-    print(reader.data)
+    # y = 'E:\Test_framework\config\config.yml'
+    # y = '/Users/fujunmin/files/python/selfPractise/Test_framework/config/config.yml'
+    # reader = YamlReader(y)
+    # print(reader.data)
 
-    e = 'E:/Test_framework/data/baidu.xlsx'
-    reader = ExcelReader(e, title_line=True)
-    print(reader.data)
+    # e = 'E:/Test_framework/data/baidu.xlsx'
+    e = '/Users/fujunmin/files/python/selfPractise/Test_framework/data/baidu.xlsx'
+    reader = ExcelReader(e, title_line=False)
+    print reader.data

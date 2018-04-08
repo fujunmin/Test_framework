@@ -1,5 +1,5 @@
 import time
-import unittest
+import unittest2
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from utils.config import Config, DRIVER_PATH, DATA_PATH

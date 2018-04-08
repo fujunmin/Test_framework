@@ -1,3 +1,5 @@
+#! /usr/bin/python
+#! coding=UTF-8
 """
 在这里添加各种自定义的断言，断言失败抛出AssertionError就OK。
 """

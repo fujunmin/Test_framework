@@ -1,3 +1,5 @@
+#! /usr/bin/python
+#! coding=UTF-8
 """抽取器，从响应结果中抽取部分数据"""
 
 import json

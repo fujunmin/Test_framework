@@ -1,3 +1,5 @@
+#! /usr/bin/python
+#! coding=UTF-8
 # -*- coding: utf-8 -*-
 """
 A TestRunner for use with the Python unit testing framework. It

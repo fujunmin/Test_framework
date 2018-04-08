@@ -1,3 +1,5 @@
+#! /usr/bin/python
+#! coding=UTF-8
 """一些支持方法，比如加密"""
 import hashlib
 from utils.log import logger
