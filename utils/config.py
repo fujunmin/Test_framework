@@ -17,14 +17,14 @@ BASE_PATH = os.path.split(os.path.dirname(os.path.abspath(__file__)))[0]   #/Use
 # print 'lianxi:',os.path.split(os.path.dirname(os.path.abspath(__file__)))   #('/Users/fujunmin/files/python/selfPractise/Test_framework', 'utils')
 
 
-CONFIG_FILE = os.path.join(BASE_PATH, 'config', 'config.yml')
+CONFIG_FILE = os.path.join(BASE_PATH, 'config', 'config.yml')  #/Users/fujunmin/files/python/selfPractise/Test_framework/config/config.yml
 DATA_PATH = os.path.join(BASE_PATH, 'data')
 DRIVER_PATH = os.path.join(BASE_PATH, 'drivers')
 LOG_PATH = os.path.join(BASE_PATH, 'log')
 REPORT_PATH = os.path.join(BASE_PATH, 'report')
 
 
-print CONFIG_FILE
+print DRIVER_PATH
 
 class Config:
     def __init__(self, config=CONFIG_FILE):
@@ -40,5 +40,6 @@ class Config:
 
 if __name__ == '__main__':
     # print BASE_PATH
-    c = Config()
-    print(c.get('URL'))
+    # c = Config()
+    # print(c.get('URL'))
+    pass

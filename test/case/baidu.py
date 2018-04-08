@@ -17,8 +17,8 @@ keyword = json.dumps('selenium')
 print type(keyword)
 
 
-driver = webdriver.Firefox()
-# driver = webdriver.Chrome()
+# driver = webdriver.Firefox()
+driver = webdriver.Chrome()
 driver.get(URL)
 # try:
 driver.find_element(*locator_kw).send_keys('selenium')

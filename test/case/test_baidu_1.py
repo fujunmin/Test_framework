@@ -28,8 +28,8 @@ class TestBaiDu(unittest.TestCase):
     locator_result = (By.XPATH, '//div[contains(@class, "result")]/h3/a')
 
     def setUp(self):
-        # self.driver = webdriver.Chrome(executable_path=DRIVER_PATH + '\chromedriver.exe')
-        self.driver = webdriver.Firefox()
+        self.driver = webdriver.Chrome(executable_path=DRIVER_PATH + '\chromedriver.exe')
+        # self.driver = webdriver.Firefox()
         self.driver.get(self.URL)
 
     def tearDown(self):
